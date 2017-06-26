@@ -1,0 +1,49 @@
+﻿@model AppGradeAcademica.Models.Grade
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes do Horário Acadêmico</h2>
+
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Curso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Curso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Turma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Turma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Horario_de_aula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horario_de_aula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Horario_de_atendimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horario_de_atendimento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-success btn-sm" })
+    @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-info btn-sm" })
+</p>

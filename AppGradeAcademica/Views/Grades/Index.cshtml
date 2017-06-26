@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AppGradeAcademica.Models.Grade>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Horários Acadêmicos</h2>
+
+</br>
+
+<p>
+    @Html.ActionLink("Adicionar", "Create", null, new { @class = "btn btn-success btn-sm" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Curso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Turma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Horario_de_aula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Horario_de_atendimento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Turma)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Horario_de_aula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Horario_de_atendimento)
+            </td>
+            <td>               
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-sm " })
+                
+                    @Html.ActionLink("Exibir", "Details", new { id = item.Id }, new { @class = "btn btn-info   btn-sm" })
+                
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" })               
+            </td>
+        </tr>
+    </tbody>
+}
+
+</table>

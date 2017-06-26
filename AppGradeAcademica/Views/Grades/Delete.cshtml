@@ -1,0 +1,55 @@
+﻿@model AppGradeAcademica.Models.Grade
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Excluir o Horário Acadêmico</h2>
+
+<h5>Tem certeza que deseja apagar esse horário ?</h5>
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Curso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Curso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Turma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Turma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Horario_de_aula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horario_de_aula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Horario_de_atendimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horario_de_atendimento)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-warning btn-sm" />
+            @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-info btn-sm" })
+        </div>
+    }
+</div>
